@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 
 export function Cards() {
   return (
-    <div className="flex w-full gap-4 sm:flex-col lg:flex-row">
+    <div className="flex w-full gap-4 flex-col lg:flex-row">
       <CardWrapper
         icon={<BriefcaseBusiness />}
         title="Chaos-free project management"

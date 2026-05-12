@@ -8,7 +8,7 @@ export function Images() {
         width={200}
         height={200}
         alt="Dashboard Image"
-        className="max-w-fit bg-cover"
+        className="max-w-fit bg-cover hidden lg:block"
       />
       {/* <Image
         src="/img/dashboard-1.png"

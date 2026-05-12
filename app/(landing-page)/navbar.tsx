@@ -5,7 +5,7 @@ export function LandingPageNavabr() {
   return (
     <>
       <div className="text-sm">
-        <ul className="lg:flex gap-16 sm:hidden">
+        <ul className="lg:flex gap-16 hidden">
           <li className="font-semibold text-muted-foreground">Find Projects</li>
           <li className="font-semibold text-muted-foreground">
             Post a Project

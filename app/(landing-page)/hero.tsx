@@ -18,14 +18,14 @@ export function Hero() {
         <br />
         place.
       </p>
-      <section className="flex items-center justify-center gap-8 mt-8">
+      <section className="flex items-center justify-center gap-8 mt-8 lg:flex-row flex-col">
         <Link href="/">
-          <Button className="p-5">
+          <Button className="lg:p-5 px-18 py-5 transition-all duration-200">
             Get Started
           </Button>
         </Link>
         <Link href="/">
-          <Button variant="outline" className="p-5">
+          <Button variant="outline" className="lg:p-5 px-16 py-5 transition-all duration-200">
             How it Works
           </Button>
         </Link>

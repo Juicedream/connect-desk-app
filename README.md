@@ -9,20 +9,36 @@ I run a small digital agency and managing freelancers is chaos. Projects are tra
 ConnectDesk is a web app where agencies post projects, freelancers apply and get hired, and clients track progress — all in one place. Think a lightweight hybrid of Notion + Upwork, built lean.
 
 ### What the app should do:
+- [x] Light & Dark Mode should be available
+- [ ] Signup & login should be available for freelancers, clients and admin
 
-- [ ] Client want to post a project brief and review freelancer proposals so I can hire the right person quickly.
-- [ ] Freelancer want to apply to projects, submit deliverables, and get paid without chasing emails.
-- [ ] Client want a live dashboard showing project milestones, file uploads, and messages so I always know what's happening.
-- [ ] Admin manage users, flag disputes, and see platform-wide activity.
-- [ ] Client reviews proposals and hires one freelancer per project.
+- [ ] App should have simple invoice generation for each milestone completion till project completion within deadline.
+- [ ] App should have manual payment status tracking and each milestone completion till project completion within deadline.
+- [x] App should have a Landing page to show potential freelancers and clients what connect desk is all about
+- [ ] App should have an escrow style payment integration.
+- [ ] App should have a notification system [==Email==]
+- [ ] App should have a messaging notification system [==In-App==]
+
+- [ ] Project dashboards for both client and freeleancer should have milestones.
+- [ ] Project dashboards for both client and freeleancer should have status updates.
+- [ ] Project dashboard for freelancer should have file uploads or link upload.
+
 - [ ] Both client and freelancer want in app messaging per project between themseleves.
-- [ ] Client should be able to leave a review and rating per freelancer completed project (post project).
+
+- [ ] Freelancer should be able to browse & apply to projects with a proposal
 - [ ] Freelancers should have their profiles public with porfolio.
+- [ ] Freelancer should be able to submit deliverables, and get paid without chasing emails.
+
+- [ ] Client want a live dashboard showing project milestones, file uploads, and messages so I always know what's happening.
+- [ ] Client want to post a project brief and review freelancer proposals so I can hire the right person quickly.
+- [ ] Client should be able to review proposals and hires one freelancer per project.
+- [ ] Client should be able to leave a review and rating per freelancer completed project (post project).
+- [ ] Clients should be able to post project with title, description, budget, deadline.
+
+- [ ] Admin should be able to manage users
+- [ ] Admin should be able to flag disputes, and see platform-wide activity.
 - [ ] Admin dispute resolution workflow.
 - [ ] Admin analytics dashboard to manage users on the app.
-- [ ] App should have an escrow style payment integration.
-- [x] Landing page to show potential freelancers and clients what connect desk is all about
-- [x] Light & Dark Mode should be available
 
 ### Nice to have:
 - [ ] Client should have saved project templates to avoid having to retype the same project brief multiple times. Once a client has posted a project before, instead of filling out the whole project brief from scratch every time, they can save a project as a template and reuse it with one click — pre-filling the title, description, budget range, milestones, etc.
