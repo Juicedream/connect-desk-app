@@ -141,7 +141,6 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
 }
  ```
  ##### Enums
@@ -213,6 +212,11 @@ enum NotificationType {
   DISPUTE_OPENED
   DISPUTE_RESOLVED
   REVIEW_RECEIVED
+}
+
+enum AccountType {
+  INDIVIDUAL
+  COMPANY
 }
  ```
 

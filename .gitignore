@@ -29,6 +29,7 @@ yarn-error.log*
 pnpm-debug.log*
 
 # env files
+.env
 .env*.local
 
 # typescript
@@ -38,3 +39,4 @@ next-env.d.ts
 #files
 guide.txt
 image.png
+/generated/prisma
