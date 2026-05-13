@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Public_Sans } from "next/font/google"
 import "@/app/globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils"
+import { Toaster } from "@/components/ui/sonner"
 
 const geistMonoHeading = Geist_Mono({
   subsets: ["latin"],
@@ -18,10 +19,10 @@ const fontMono = Geist_Mono({
 
 export const metadata = {
   title: {
-    template: '%s | Connect Desk App',
-    default: 'Connect Desk App',
+    template: "%s | Connect Desk App",
+    default: "Connect Desk App",
   },
-  description: 'Connecting Clients and Freelancers while managing projects'
+  description: "Connecting Clients and Freelancers while managing projects",
 }
 
 export default function RootLayout({
@@ -41,16 +42,11 @@ export default function RootLayout({
         geistMonoHeading.variable
       )}
     >
-      <head>
-        <link
-          rel="icon"
-          href="/icon?<generated>"
-          type="image/png"
-          sizes="32x32"
-        />
-      </head>
       <body>
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          {children}
+          <Toaster />
+        </ThemeProvider>
       </body>
     </html>
   )

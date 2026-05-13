@@ -12,7 +12,7 @@ export function FooterHero() {
         Join the hundreds of agencies using ConnectDesk to manage their talent gap <br/> with precision.
       </p>
       <section className="flex flex-col lg:flex-row items-center justify-center gap-8 mt-8">
-        <Link href="/">
+        <Link href="/register">
           <Button className="p-5 bg-primary">
             Get Started For Free
           </Button>

@@ -19,7 +19,7 @@ export function Hero() {
         place.
       </p>
       <section className="flex items-center justify-center gap-8 mt-8 lg:flex-row flex-col">
-        <Link href="/">
+        <Link href="/register">
           <Button className="lg:p-5 px-18 py-5 transition-all duration-200">
             Get Started
           </Button>

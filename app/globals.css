@@ -178,3 +178,8 @@
   background-color: rgba(72, 0, 255, 0.416);
   animation: fromSunDownToSunSet 8s infinite alternate ease-in-out;
 }
+
+button:hover,
+[role="button"]:hover {
+  cursor: pointer;
+}

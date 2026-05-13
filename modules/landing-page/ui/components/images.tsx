@@ -4,19 +4,13 @@ export function Images() {
   return (
     <div className="mt-12 flex justify-evenly rounded-2xl border-none px-1 py-4">
       <Image
-        src="/img/dashboard-3.svg"
+        src="/svg/dashboard3.svg"
         width={200}
         height={200}
         alt="Dashboard Image"
         className="max-w-fit bg-cover hidden lg:block"
       />
-      {/* <Image
-        src="/img/dashboard-1.png"
-        width={200}
-        height={200}
-        alt="Dashboard Image"
-        className="max-w-fit bg-cover"
-      /> */}
+   
       <Image
         src="/img/dashboard-2.png"
         width={200}
@@ -24,13 +18,7 @@ export function Images() {
         alt="Dashboard Image"
         className="max-w-fit bg-cover"
       />
-      {/* <Image
-        src="/img/dashboard-3.svg"
-        width={200}
-        height={200}
-        alt="Dashboard Image"
-        className="max-w-fit bg-cover"
-      /> */}
+     
     </div>
   )
 }
