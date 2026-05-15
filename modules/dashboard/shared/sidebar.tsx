@@ -12,7 +12,6 @@ import {
   Loader2Icon,
   HelpCircleIcon,
   BotIcon,
-  User,
 } from "lucide-react"
 
 import { usePathname } from "next/navigation"
@@ -31,7 +30,6 @@ import { PowerIcon } from "@phosphor-icons/react"
 import { signOut } from "@/lib/supabase/actions/auth"
 import { useRouter } from "next/navigation"
 import { toasty } from "@/components/Toasty"
-import { DashboardNotifications } from "./notifications"
 import { ModeToggle } from "@/components/ModeToggle"
 
 const navItems = {

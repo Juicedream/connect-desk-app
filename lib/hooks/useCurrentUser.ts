@@ -7,6 +7,7 @@ interface ICurrentUser {
   email: string
   name: string
   role: "client" | "freelancer" | "admin"
+  isActive: boolean
 }
 
 export function useCurrentUser() {

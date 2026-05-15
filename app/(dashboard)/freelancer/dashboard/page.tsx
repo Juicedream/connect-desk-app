@@ -1,5 +1,5 @@
+import { FreelancerDashboardView } from "@/modules/dashboard/freelancer/view/freelancer-dashboard-view";
+
 export default function FreelancerDashboard(){
-  return (
-    <h1>Freelancer Dashboard</h1>
-  )
+  return <FreelancerDashboardView />
 }

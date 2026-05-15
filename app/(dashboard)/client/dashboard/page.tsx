@@ -1,5 +1,5 @@
-export default function ClientDashboard(){
-  return (
-    <h1>Client Dashboard</h1>
-  )
+import { ClientDashboardView } from "@/modules/dashboard/client/view/client-dashboard-view"
+
+export default function ClientDashboard() {
+  return <ClientDashboardView />
 }
