@@ -17,7 +17,7 @@ export function NavbarWrapper({ children }: { children: React.ReactNode }) {
     changeTheme(theme)
   }, [theme]);
   return (
-    <nav className="animate-slide sticky top-0 z-20 flex w-full flex-col items-center gap-1 border-b bg-white px-8 py-2 sm:justify-center lg:flex-row lg:justify-between lg:py-4 dark:bg-black">
+    <nav className="sticky top-0 z-20 flex w-full flex-col items-center gap-1 border-b bg-white px-8 py-2 sm:justify-center lg:flex-row lg:justify-between lg:py-4 dark:bg-black">
       <Link href="/">
         {/* <h1 className="font-bold text-md lg:text-xl">ConnectDesk</h1> */}
         {currentTheme === "dark" ? (

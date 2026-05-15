@@ -7,7 +7,7 @@ function buildOptions(description?: string): ExternalToast {
         <code>{description}</code>
       </pre>
     ) : undefined,
-    position: "bottom-right",
+    position: "top-center",
     classNames: {
       content: "flex flex-col gap-2",
     },

@@ -40,3 +40,6 @@ next-env.d.ts
 guide.txt
 image.png
 /generated/prisma
+/drizzle/meta
+/drizzle/migrations
+/drizzle/*.sql

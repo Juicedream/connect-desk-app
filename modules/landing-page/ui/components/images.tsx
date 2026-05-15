@@ -12,7 +12,7 @@ export function Images() {
       />
    
       <Image
-        src="/img/dashboard-2.png"
+        src="/img/dashboard2.png"
         width={200}
         height={200}
         alt="Dashboard Image"

@@ -2,10 +2,12 @@
 import { InputWithLabel } from "@/components/InputWithLabel"
 import { toasty } from "@/components/Toasty"
 import { Button } from "@/components/ui/button"
+import { dbCreateUser } from "@/drizzle"
+import { manualSignUp } from "@/lib/supabase/actions/auth"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Loader2 } from "lucide-react"
-import Link from "next/link"
-import { useEffect } from "react"
+import { useRouter } from "next/navigation"
+import { useEffect, useState } from "react"
 import { useForm } from "react-hook-form"
 import * as z from "zod"
 
@@ -18,11 +20,13 @@ const formSchema = z.object({
       /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,16}$/,
       "Password should contain at least one letter, one digit, and is between eight and sixteen characters in length"
     ),
-  role: z.string().min(1, "Kindly provide a valid role").transform(val => val.toLowerCase()),
+  role: z.string().transform((val) => val.toLowerCase()),
 })
 
 export function RegistrationForm({ role }: { role: string }) {
-  const form = useForm< z.infer<typeof formSchema> >({
+  const [isLoading, setIsLoading] = useState(false)
+  const router = useRouter()
+  const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
@@ -33,22 +37,47 @@ export function RegistrationForm({ role }: { role: string }) {
   })
 
   useEffect(() => {
-  form.setValue("role", role)
-}, [role, form])
-
-  const { isSubmitting } = form.formState;
+    form.setValue("role", role)
+  }, [role, form])
 
   async function onSubmit(data: z.infer<typeof formSchema>) {
-    console.log({data})
-    if (!data.email && !data.password) {
-      return;
+    setIsLoading(true)
+    if (!data.email || !data.password) {
+      return
     }
-    
-    toasty.success("Account created! Check your email to verify.", JSON.stringify(data));
-    form.reset();
+
+    try {
+      const result = await manualSignUp({
+        name: data.name,
+        email: data.email,
+        password: data.password,
+        role: data.role as "client" | "freelancer",
+      })
+
+      if (result?.message) {
+        toasty.error(result?.message)
+        return
+      }
+      console.log("supabase user:", JSON.stringify(result.user, null, 2))
+
+      if (result?.user) {
+        const dbResult = await dbCreateUser(result.user)
+        if (dbResult?.message) {
+          toasty.error(dbResult.message)
+        }
+        toasty.success("Account created successfully")
+        form.reset()
+        router.push("/dashboard")
+      }
+    } catch {
+      toasty.error("Error occurred")
+      return
+    } finally {
+      setIsLoading(false)
+    }
   }
 
-  // form.setValue("role", role);
+ 
 
   return (
     <form onSubmit={form.handleSubmit(onSubmit)} className="mt-4 px-1">
@@ -73,8 +102,12 @@ export function RegistrationForm({ role }: { role: string }) {
         type="password"
         control={form.control}
       />
-      <Button type="submit" className="w-full py-6 text-md mt-4">
-        {isSubmitting ? <Loader2 className="animate-spin" /> : "Create my account"}
+      <Button
+        disabled={isLoading}
+        type="submit"
+        className="text-md mt-4 w-full py-6"
+      >
+        {isLoading ? <Loader2 className="animate-spin" /> : "Create my account"}
       </Button>
     </form>
   )

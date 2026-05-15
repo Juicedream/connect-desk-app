@@ -18,7 +18,7 @@ export function Cards() {
             width={80}
             height={80}
             alt="Card image"
-            src="/img/dashboard-4.jpg"
+            src="/img/dashboard4.jpg"
             className="rounded-md bg-slate-900 py-1"
           />
           <p className="text-xs text-white">
